@@ -60,6 +60,6 @@ let injectedFiles = dynamic([
 ]);
 union DeviceProcessEvents, DeviceNetworkEvents
 | where FileName in (injectedFiles)
-| where RemotePort == "3535" or where RemoteIP in (loader_panel_C2s)
+| where RemotePort has_any ("3535", "4455", "8888") or where RemoteIP in (loader_panel_C2s) // YARA rule identified additional payloads using different outbound ports: 4455, 8888 - added for broader detection
 | project Timestamp, FileName, RemoteIp, RemotePort
 ```
