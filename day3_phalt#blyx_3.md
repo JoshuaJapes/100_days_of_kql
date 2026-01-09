@@ -27,17 +27,9 @@
 
 # Query
 ```
-let browserProcesses = dynamic([
-        "msedge.exe",
-        "chrome.exe",
-        "firefox.exe",
-        "brave.exe",
-        "opera.exe",
-        "iexplore.exe",    
-        "safari.exe"]); 
 DeviceProcessEvents
-  | where FileName =~ "PowerShell.exe" or FileName =~ "pwsh.exe"
-  | where InitiatingProcessFileName in~ (browserProcesses) or where InitiatingProcessFileName =~ "explorer.exe"
+  | where InitiatingProcessFileName =~ "explorer.exe"
+  | where FileName =~ "powershell.exe" or FileName =~ "pwsh.exe"
   | where ProcessCommandLine has_all (
     "booking.com",
     "gci",    
