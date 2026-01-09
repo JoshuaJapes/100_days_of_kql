@@ -3,7 +3,6 @@
 
 # Description
 - Detects possible ClickFix used by PHALT#BLYX to execute PowerShell and retrieve .proj payloads.
-- Note: In previous testing of ClickFix, we observed the browser as the initiating process however, added explorer.exe as a backup.
 
 # References
 - https://www.securonix.com/blog/analyzing-phaltblyx-how-fake-bsods-and-trusted-build-tools-are-used-to-construct-a-malware-infection/
